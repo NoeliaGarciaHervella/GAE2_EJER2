@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Factura</h1>
+    <div>
+        <h3>Emisor de factura</h3>
+        <pre>
+            <u><b>CIF:</b></u> {{ factura.cif }}
+            <u><b>Nombre:</b></u> {{ factura.nombre }}
+            <u><b>Direccion:</b></u> {{ factura.direccion }}
+            <u><b>Población:</b></u> {{ factura.poblacion }}
+            <u><b>Provincia:</b></u> {{ factura.provincia }}
+            <u><b>CP:</b></u> {{ factura.cp }}
+            <u><b>Pais:</b></u> {{ factura.pais }}
+            <u><b>Persona:</b></u> {{ factura.persona }}
+            <u><b>Email:</b></u> {{ factura.email }}
+            <u><b>Telefono:</b></u> {{ factura.telefono }}
+
+        </pre>
+
+    </div>
+    <div>
+        <h3>Línea de factura</h3>
+        <pre>
+            {% for linea in factura.linea %}
+                <u><b>Concepto:</b></u> {{ linea.concepto }}
+                <u><b>Precio:</b></u> {{ linea.precio }}
+                <u><b>Unidades:</b></u> {{ linea.unidades }}
+                <u><b>Importe bruto:</b></u> {{ linea.importeBruto }}
+                <u><b>IVA:</b></u> {{ linea.iva }}
+                <u><b>Importe total:</b></u> {{ linea.importeTotal }}
+        {% endfor %}
+        </pre>
+    </div>
+    <div>
+        <p><u><b>Fecha:</b></u> {{ factura.fecha }}</p>
+    </div>
+
+
+</body>
+</html>

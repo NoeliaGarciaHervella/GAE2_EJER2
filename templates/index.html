@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Facturas</title>
+    <script>
+        function check() {
+            const edCIF = document.getElementById("edCIF");
+            const edNombre = document.getElementById("edNombre");
+            const edDireccion = document.getElementById("edDireccion");
+            const edPoblacion = document.getElementById("edPoblacion");
+            const edProvincia = document.getElementById("edProvincia");
+            const edCP = document.getElementById("edCP");
+            const edPais = document.getElementById("edPais");
+            const edPC = document.getElementById("edPC");
+            const edEmail = document.getElementById("edEmail");
+            const edTelefono = document.getElementById("edTelefono");
+            const edConcepto = document.getElementById("edConcepto");
+            const edPrecio = document.getElementById("edPrecio");
+            const edUnidades = document.getElementById("edUnidades");
+            const edImporteB = document.getElementById("edImporteB");
+            const edIVA = document.getElementById("edIVA");
+            const edImporteT = document.getElementById("edImporteT");
+            const edFecha = document.getElementById("edFecha");
+
+            return !(edCIF.value.trim().length === 0) && !(edNombre.value.trim().length === 0) && !(edDireccion.value.trim().length === 0) && !(edPoblacion.value.trim().length === 0)
+             && !(edProvincia.value.trim().length === 0) && !(edCP.value.trim().length === 0) && !(edPais.value.trim().length === 0) && !(edPC.value.trim().length === 0)
+             && !(edEmail.value.trim().length === 0) && !(edTelefono.value.trim().length === 0) && !(edConcepto.value.trim().length === 0) && !(edPrecio.value.trim().length === 0)
+             && !(edUnidades.value.trim().length === 0) && !(edImporteB.value.trim().length === 0) && !(edIVA.value.trim().length === 0) && !(edImporteT.value.trim().length === 0)
+             && !(edFecha.value.trim().length === 0)
+        }
+    </script>
+</head>
+<body>
+    <h1>FACTURA</h1>
+    <form id="frmFactura"
+        action="/facturas"
+        method="post"
+        onsubmit="return check()">
+        <div>
+            <h3>Emisor factura</h3>
+            <label for="edCIF">CIF:</label>
+            <input type="text" id="edCIF" name="edCIF">
+            <label for="edNombre">Nombre:</label>
+            <input type="text" id="edNombre" name="edNombre">
+            <label for="edDireccion">Direccion:</label>
+            <input type="text" id="edDireccion" name="edDireccion">
+            <label for="edPoblacion">Poblacion:</label>
+            <input type="text" id="edPoblacion" name="edPoblacion">
+            <label for="edProvincia">Provincia:</label>
+            <input type="text" id="edProvincia" name="edProvincia">
+            <label for="edCP">CP:</label>
+            <input type="text" id="edCP" name="edCP">
+            <label for="edPais">Pais:</label>
+            <input type="text" id="edPais" name="edPais">
+            <label for="edPC">Persona de contacto:</label>
+            <input type="text" id="edPC" name="edPC">
+            <label for="edEmail">Email:</label>
+            <input type="text" id="edEmail" name="edEmail">
+            <label for="edTelefono">Telefono:</label>
+            <input type="text" id="edTelefono" name="edTelefono">
+        </div>
+        <div>
+            <h3>Linea de factura</h3>
+            <label for="edConcepto">Concepto:</label>
+            <input type="text" id="edConcepto" name="edConcepto">
+            <label for="edPrecio">Precio:</label>
+            <input type="text" id="edPrecio" name="edPrecio">
+            <label for="edUnidades">Unidades:</label>
+            <input type="text" id="edUnidades" name="edUnidades">
+            <label for="edImporteB">Importe bruto:</label>
+            <input type="text" id="edImporteB" name="edImporteB">
+            <label for="edIVA">IVA:</label>
+            <input type="text" id="edIVA" name="edIVA">
+            <label for="edImporteT">Importe total:</label>
+            <input type="text" id="edImporteT" name="edImporteT">
+        </div>
+        <div>
+            <label for="edFecha">Fecha:</label>
+            <input type="text" id="edFecha" name="edFecha">
+        </div>
+        <input type="submit" value="Crear factura">
+    </form>
+</body>
+</html>
